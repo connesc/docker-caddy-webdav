@@ -1,4 +1,4 @@
-http://:80
+http://:{$PORT}
 gzip
 basicauth / {$USERNAME} {$PASSWORD}
 webdav {

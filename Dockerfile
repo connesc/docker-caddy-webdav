@@ -4,9 +4,10 @@ RUN wget -O - 'https://caddyserver.com/download/linux/amd64?plugins=http.webdav&
 FROM scratch
 COPY --from=0 caddy /usr/local/bin/
 WORKDIR /caddy
-EXPOSE 80
 COPY Caddyfile ./
-ENV USERNAME= \
+ENV PORT=80 \
+    USERNAME= \
     PASSWORD= \
     SCOPE=/srv
+EXPOSE ${PORT}
 ENTRYPOINT [ "caddy" ]
