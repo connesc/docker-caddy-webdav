@@ -1,0 +1,8 @@
+http://:80
+gzip
+basicauth / {$USERNAME} {$PASSWORD}
+webdav {
+	scope {$SCOPE}
+}
+log stdout
+errors stderr
